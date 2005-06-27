@@ -1,25 +1,30 @@
 <?php
 /**
-* Cpdf
-*
-* http://www.ros.co.nz/pdf
-*
-* A PHP class to provide the basic functionality to create a pdf document without
-* any requirement for additional modules.
-*
-* Note that they companion class CezPdf can be used to extend this class and dramatically
-* simplify the creation of documents.
-*
-* IMPORTANT NOTE
-* there is no warranty, implied or otherwise with this software.
-* 
-* LICENCE
-* This code has been placed in the Public Domain for all to enjoy.
-*
-* @author		Wayne Munro <pdf@ros.co.nz>
-* @version 	009
-* @package	Cpdf
-*/
+ * @package	pdf
+ * @author		Wayne Munro <pdf@ros.co.nz>
+ */
+/**
+ * Cpdf
+ *
+ * http://www.ros.co.nz/pdf
+ *
+ * A PHP class to provide the basic functionality to create a pdf document without
+ * any requirement for additional modules.
+ *
+ * Note that they companion class CezPdf can be used to extend this class and dramatically
+ * simplify the creation of documents.
+ *
+ * IMPORTANT NOTE
+ * there is no warranty, implied or otherwise with this software.
+ * 
+ * LICENCE
+ * This code has been placed in the Public Domain for all to enjoy.
+ *
+ * @author		Wayne Munro <pdf@ros.co.nz>
+ * @version 	009
+ * @package	pdf
+ * @subpackage	Cpdf
+ */
 class Cpdf {
 
 /**
@@ -1230,7 +1235,7 @@ function output($debug=0){
   $this->checkAllHere();
 
   $xref=array();
-  $content="%PDF-1.3\n%âãÏÓ\n";
+  $content="%PDF-1.3\n%âã�?Ó\n";
 //  $content="%PDF-1.3\n%\n";
 //  $content="%PDF-1.3\n";
   $pos=strlen($content);
