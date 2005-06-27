@@ -1604,17 +1604,16 @@ function selectFont($fontName,$encoding='',$set=1){
 }
 
 /**
-* sets up the current font, based on the font families, and the current text state
-* note that this system is quite flexible, a <b><i> font can be completely different to a
-* <i><b> font, and even <b><b> will have to be defined within the family to have meaning
-* This function is to be called whenever the currentTextState is changed, it will update
-* the currentFont setting to whatever the appropriatte family one is.
-* If the user calls selectFont themselves then that will reset the currentBaseFont, and the currentFont
-* This function will change the currentFont to whatever it should be, but will not change the 
-* currentBaseFont.
-*
-* @access private
-*/
+ * sets up the current font, based on the font families, and the current text state
+ * note that this system is quite flexible, a &lt;b&gt; &lt;i&gt; font can be completely different to a
+ * &lt;i&gt; &lt;b&gt; font, and even &lt;b&gt; &lt;b&gt; tState is changed, it will update
+ * the currentFont setting to whatever the appropriatte family one is.
+ * If the user calls selectFont themselves then that will reset the currentBaseFont, and the currentFont
+ * This function will change the currentFont to whatever it should be, but will not change the 
+ * currentBaseFont.
+ *
+ * @access private
+ */
 function setCurrentFont(){
   if (strlen($this->currentBaseFont)==0){
     // then assume an initial font
