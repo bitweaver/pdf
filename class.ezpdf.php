@@ -1,7 +1,23 @@
 <?php
+/**
+ * @package	pdf
+ * @author		Wayne Munro <pdf@ros.co.nz>
+ */
 
+/**
+ * required setup
+ */
 include_once(BIT_PKG_PATH.'pdf/class.pdf.php');
 
+/**
+ * this class will take the basic interaction facilities of the Cpdf class
+ * and make more useful functions so that the user does not have to 
+ * know all the ins and outs of pdf presentation to produce something pretty. 
+ *
+ * @version 	009
+ * @package	pdf
+ * @subpackage	Cezpdf
+ */
 class Cezpdf extends Cpdf {
 //==============================================================================
 // this class will take the basic interaction facilities of the Cpdf class
@@ -25,12 +41,14 @@ var $ezPageCount=0;
 
 // ------------------------------------------------------------------------------
 
+/**
+ * Assuming that people don't want to specify the paper size using the absolute coordinates
+ * allow a couple of options:
+ * orientation can be 'portrait' or 'landscape'
+ * or, to actually set the coordinates, then pass an array in as the first parameter.
+ * the defaults are as shown.
+ */
 function Cezpdf($paper='a4',$orientation='portrait'){
-	// Assuming that people don't want to specify the paper size using the absolute coordinates
-	// allow a couple of options:
-	// orientation can be 'portrait' or 'landscape'
-	// or, to actually set the coordinates, then pass an array in as the first parameter.
-	// the defaults are as shown.
 	// 
 	// -------------------------
 	// 2002-07-24 - Nicola Asuni (info@tecnick.com):
@@ -131,7 +149,9 @@ function Cezpdf($paper='a4',$orientation='portrait'){
 
 // ------------------------------------------------------------------------------
 // 2002-07-24: Nicola Asuni (info@tecnick.com)
-// Set Margins in centimeters
+/**
+ * Set Margins in centimeters
+ */
 function ezSetCmMargins($top,$bottom,$left,$right){
 	$top = ( $top / 2.54 ) * 72;
 	$bottom = ( $bottom / 2.54 ) * 72;

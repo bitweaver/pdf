@@ -1,8 +1,23 @@
 <?php
+/**
+* Pdf system class for outputing pdf file images
+*
+* @author   
+* @version  $Revision: 1.2 $
+* @package  pdf
+*/
+
+/**
+* required setup
+*/
 //include ('lib/pdflib/class.ezpdf.php');
 require_once( PDF_PKG_PATH.'class.ezpdf.php' );
 require_once( UTIL_PKG_PATH.'htmlparser/html_parser_inc.php' );
 
+/**
+* @package  pdf
+* @subpackage  BitPdf
+*/
 class BitPdf extends Cezpdf
 {
 	var $mSettings;

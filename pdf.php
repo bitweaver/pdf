@@ -1,12 +1,19 @@
 <?php
-
-// $Header: /cvsroot/bitweaver/_bit_pdf/pdf.php,v 1.2 2005/06/20 21:49:09 lsces Exp $
+/**
+* Pdf system class for outputing pdf file images
+*
+* @author   
+* @version  $Revision: 1.3 $
+* @package  pdf
+*/
 
 // Copyright (c) 2002-2003, Luis Argerich, Garland Foster, Eduardo Polidor, et. al.
 // All Rights Reserved. See copyright.txt for details and a complete list of authors.
 // Licensed under the GNU LESSER GENERAL PUBLIC LICENSE. See license.txt for details.
 
-// Initialization
+/**
+* required setup
+*/
 require_once( '../bit_setup_inc.php' );
 
 include_once( STRUCTURES_PKG_PATH.'struct_lib.php');

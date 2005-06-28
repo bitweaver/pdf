@@ -1,25 +1,30 @@
 <?php
 /**
-* Cpdf
-*
-* http://www.ros.co.nz/pdf
-*
-* A PHP class to provide the basic functionality to create a pdf document without
-* any requirement for additional modules.
-*
-* Note that they companion class CezPdf can be used to extend this class and dramatically
-* simplify the creation of documents.
-*
-* IMPORTANT NOTE
-* there is no warranty, implied or otherwise with this software.
-* 
-* LICENCE
-* This code has been placed in the Public Domain for all to enjoy.
-*
-* @author		Wayne Munro <pdf@ros.co.nz>
-* @version 	009
-* @package	Cpdf
-*/
+ * @package	pdf
+ * @author		Wayne Munro <pdf@ros.co.nz>
+ */
+/**
+ * Cpdf
+ *
+ * http://www.ros.co.nz/pdf
+ *
+ * A PHP class to provide the basic functionality to create a pdf document without
+ * any requirement for additional modules.
+ *
+ * Note that they companion class CezPdf can be used to extend this class and dramatically
+ * simplify the creation of documents.
+ *
+ * IMPORTANT NOTE
+ * there is no warranty, implied or otherwise with this software.
+ * 
+ * LICENCE
+ * This code has been placed in the Public Domain for all to enjoy.
+ *
+ * @author		Wayne Munro <pdf@ros.co.nz>
+ * @version 	009
+ * @package	pdf
+ * @subpackage	Cpdf
+ */
 class Cpdf {
 
 /**
@@ -1230,7 +1235,7 @@ function output($debug=0){
   $this->checkAllHere();
 
   $xref=array();
-  $content="%PDF-1.3\n%âãÏÓ\n";
+  $content="%PDF-1.3\n%âã�?Ó\n";
 //  $content="%PDF-1.3\n%\n";
 //  $content="%PDF-1.3\n";
   $pos=strlen($content);
@@ -1599,17 +1604,16 @@ function selectFont($fontName,$encoding='',$set=1){
 }
 
 /**
-* sets up the current font, based on the font families, and the current text state
-* note that this system is quite flexible, a <b><i> font can be completely different to a
-* <i><b> font, and even <b><b> will have to be defined within the family to have meaning
-* This function is to be called whenever the currentTextState is changed, it will update
-* the currentFont setting to whatever the appropriatte family one is.
-* If the user calls selectFont themselves then that will reset the currentBaseFont, and the currentFont
-* This function will change the currentFont to whatever it should be, but will not change the 
-* currentBaseFont.
-*
-* @access private
-*/
+ * sets up the current font, based on the font families, and the current text state
+ * note that this system is quite flexible, a &lt;b&gt; &lt;i&gt; font can be completely different to a
+ * &lt;i&gt; &lt;b&gt; font, and even &lt;b&gt; &lt;b&gt; tState is changed, it will update
+ * the currentFont setting to whatever the appropriatte family one is.
+ * If the user calls selectFont themselves then that will reset the currentBaseFont, and the currentFont
+ * This function will change the currentFont to whatever it should be, but will not change the 
+ * currentBaseFont.
+ *
+ * @access private
+ */
 function setCurrentFont(){
   if (strlen($this->currentBaseFont)==0){
     // then assume an initial font
