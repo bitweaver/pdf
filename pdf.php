@@ -3,7 +3,7 @@
 * Pdf system class for outputing pdf file images
 *
 * @author   
-* @version  $Revision: 1.2.2.1 $
+* @version  $Revision: 1.2.2.2 $
 * @package  pdf
 */
 
@@ -34,11 +34,11 @@ if (!isset($_SESSION["thedate"])) {
 if (!isset($_REQUEST["page"])) {
 	$page = $wikiHomePage;
 
-	$smarty->assign('page', $wikiHomePage);
+	$gBitSmarty->assign('page', $wikiHomePage);
 } else {
 	$page = $_REQUEST["page"];
 
-	$smarty->assign_by_ref('page', $_REQUEST["page"]);
+	$gBitSmarty->assign_by_ref('page', $_REQUEST["page"]);
 }
 
 require_once ( WIKI_PKG_PATH.'page_setup_inc.php' );
@@ -55,7 +55,7 @@ if (isset($_REQUEST["action"])) {
 
 // If the page doesn't exist then display an error
 if (!$wikilib->pageExists($page)) {
-	$smarty->assign('msg', tra("Page cannot be found"));
+	$gBitSmarty->assign('msg', tra("Page cannot be found"));
 
 	$gBitSystem->display( 'error.tpl' );
 	die;
@@ -63,7 +63,7 @@ if (!$wikilib->pageExists($page)) {
 
 // Now check permissions to access this page
 if (!$gBitUser->hasPermission( 'bit_p_view' )) {
-	$smarty->assign('msg', tra("Permission denied you cannot view this page"));
+	$gBitSmarty->assign('msg', tra("Permission denied you cannot view this page"));
 
 	$gBitSystem->display( 'error.tpl' );
 	die;
@@ -79,21 +79,21 @@ $info = $wikilib->get_page_info($page);
 
 // Verify lock status
 if ($info["flag"] == 'L') {
-	$smarty->assign('lock', true);
+	$gBitSmarty->assign('lock', true);
 } else {
-	$smarty->assign('lock', false);
+	$gBitSmarty->assign('lock', false);
 }
 
 $pdata = $gBitSystem->parseData($info["data"]);
 
-//$smarty->assign_by_ref('parsed',$pdata);
-//$smarty->assign_by_ref('last_modified',date("l d of F, Y  [H:i:s]",$info["last_modified"]));
-//$smarty->assign_by_ref('last_modified',$info["last_modified"]);
+//$gBitSmarty->assign_by_ref('parsed',$pdata);
+//$gBitSmarty->assign_by_ref('last_modified',date("l d of F, Y  [H:i:s]",$info["last_modified"]));
+//$gBitSmarty->assign_by_ref('last_modified',$info["last_modified"]);
 if (empty($info["user"])) {
 	$info["user"] = 'anonymous';
 }
 
-//$smarty->assign_by_ref('lastUser',$info["user"]);
+//$gBitSmarty->assign_by_ref('lastUser',$info["user"]);
 
 // Parse the Data into PDF format (:TODO:)
 // 
@@ -107,7 +107,7 @@ $pdf->ezStream();
 // Display the Index Template
 /*
 $gBitSystem->display('tiki-show_page.tpl');
-$smarty->assign('show_page_bar','y');
+$gBitSmarty->assign('show_page_bar','y');
 */
 
 ?>

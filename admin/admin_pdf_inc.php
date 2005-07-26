@@ -12,5 +12,5 @@ if( !empty( $_REQUEST['save'] ) ) {
 }
 
 // assign to smarty
-$smarty->assign('pdfSettings', $pdf->mSettings );
+$gBitSmarty->assign('pdfSettings', $pdf->mSettings );
 ?>
