@@ -3,7 +3,7 @@
 * Pdf system class for outputing pdf file images
 *
 * @author   
-* @version  $Revision: 1.2 $
+* @version  $Revision: 1.3 $
 * @package  pdf
 */
 
@@ -83,7 +83,7 @@ class BitPdf extends Cezpdf
 		global $gBitSystem;
 		$ret = NULL;
 		$query = "SELECT `name`,`package`,`value` FROM `" . BIT_DB_PREFIX . "tiki_preferences` WHERE `name` LIKE ?";
-		$result = $gBitSystem->query($query,array('feature_%_generate_pdf'));
+		$result = $gBitSystem->mDb->query($query,array('feature_%_generate_pdf'));
 		while( $res = $result->fetchRow() ) {
 			$ret[] = $res;
 		}
