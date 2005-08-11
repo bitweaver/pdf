@@ -3,7 +3,7 @@
 * Pdf system class for outputing pdf file images
 *
 * @author   
-* @version  $Revision: 1.1.1.1.2.1 $
+* @version  $Revision: 1.1.1.1.2.2 $
 * @package  pdf
 */
 
@@ -60,8 +60,7 @@ $pdata = '';
 
 if ($pdflib->mSettings['autobreak'] == 'on') {
 	foreach ($convertpages as $conId) {
-		$conPage = $gLibertySystem->getLibertyObject( $conId );
-		if( $conPage->load() ) {
+		if( $conPage = $gLibertySystem->getLibertyObject( $conId ) ) {
 			if( empty( $downloadTitle ) ) { 
 				$downloadTitle = $conPage->mInfo['title'];
 			}
@@ -76,8 +75,7 @@ if ($pdflib->mSettings['autobreak'] == 'on') {
 } else {
 	$linkDest = array();
 	foreach ($convertpages as $conId) {
-		$conPage = $gLibertySystem->getLibertyObject( $conId );
-		if( $conPage->load() ) {
+		if( $conPage = $gLibertySystem->getLibertyObject( $conId ) ) {
 			if( empty( $downloadTitle ) ) { 
 				$downloadTitle = $conPage->mInfo['title'];
 			}
