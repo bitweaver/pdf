@@ -3,7 +3,7 @@
 * Pdf system class for outputing pdf file images
 *
 * @author   
-* @version  $Revision: 1.2.2.2 $
+* @version  $Revision: 1.2.2.3 $
 * @package  pdf
 */
 
@@ -21,11 +21,11 @@ include_once( WIKI_PKG_PATH.'BitPage.php');
 
 // Create the HomePage if it doesn't exist
 if (!$wikilib->pageExists($wikiHomePage)) {
-	$wikilib->create_page($wikiHomePage, 0, '', date("U"), 'bitweaver initialization');
+	$wikilib->create_page($wikiHomePage, 0, '', $gBitSystem->getUTCTime(), 'bitweaver initialization');
 }
 
 if (!isset($_SESSION["thedate"])) {
-	$thedate = date("U");
+	$thedate = $gBitSystem->getUTCTime();
 } else {
 	$thedate = $_SESSION["thedate"];
 }
