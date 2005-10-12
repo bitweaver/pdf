@@ -1,7 +1,10 @@
 <?php
 global $gBitSystem;
-$gBitSystem->registerPackage( 'pdf', dirname( __FILE__ ).'/' );
+$gBitSystem->registerPackage( 'pdf', dirname( __FILE__ ).'/', TRUE, LIBERTY_SERVICE_DOCUMENT_GENERATION );
 if( $gBitSystem->isPackageActive( 'pdf' ) ) {
+	$gLibertySystem->registerService( LIBERTY_SERVICE_DOCUMENT_GENERATION, PDF_PKG_NAME, array(
+		'content_icon_tpl' => 'bitpackage:pdf/pdf_service_icons.tpl',
+	) );
 	if( !empty( $_REQUEST['style'] ) ) {
 		global $gPreviewStyle;
 		$gPreviewStyle = $_REQUEST['style'];
