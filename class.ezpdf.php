@@ -7,7 +7,7 @@
 /**
  * required setup
  */
-include_once(BIT_PKG_PATH.'pdf/class.pdf.php');
+include_once(BIT_ROOT_PATH.'pdf/class.pdf.php');
 
 /**
  * this class will take the basic interaction facilities of the Cpdf class
