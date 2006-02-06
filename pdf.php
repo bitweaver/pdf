@@ -3,7 +3,7 @@
 * Pdf system class for outputing pdf file images
 *
 * @author   
-* @version  $Revision: 1.6 $
+* @version  $Revision: 1.7 $
 * @package  pdf
 */
 
@@ -70,7 +70,7 @@ if (!$gBitUser->hasPermission( 'bit_p_view' )) {
 }
 
 // Now increment page hits since we are visiting this page
-if ($count_admin_pvs == 'y' || !$gBitUser->isAdmin()) {
+if ($gBitSystem->isFeatureActive( 'count_admin_pvs' ) || !$gBitUser->isAdmin()) {
 	$wikilib->add_hit($page);
 }
 
