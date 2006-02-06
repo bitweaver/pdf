@@ -3,7 +3,7 @@
 * Pdf system class for outputing pdf file images
 *
 * @author   
-* @version  $Revision: 1.5 $
+* @version  $Revision: 1.6 $
 * @package  pdf
 */
 
@@ -20,8 +20,8 @@ include_once( STRUCTURES_PKG_PATH.'struct_lib.php');
 include_once( WIKI_PKG_PATH.'BitPage.php');
 
 // Create the HomePage if it doesn't exist
-if (!$wikilib->pageExists($wikiHomePage)) {
-	$wikilib->create_page($wikiHomePage, 0, '', $gBitSystem->getUTCTime(), 'bitweaver initialization');
+if (!$wikilib->pageExists($wiki_home_page)) {
+	$wikilib->create_page($wiki_home_page, 0, '', $gBitSystem->getUTCTime(), 'bitweaver initialization');
 }
 
 if (!isset($_SESSION["thedate"])) {
@@ -32,9 +32,9 @@ if (!isset($_SESSION["thedate"])) {
 
 // Get the page from the request var or default it to HomePage
 if (!isset($_REQUEST["page"])) {
-	$page = $wikiHomePage;
+	$page = $wiki_home_page;
 
-	$gBitSmarty->assign('page', $wikiHomePage);
+	$gBitSmarty->assign('page', $wiki_home_page);
 } else {
 	$page = $_REQUEST["page"];
 

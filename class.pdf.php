@@ -2904,8 +2904,8 @@ function addImage(&$img,$x,$y,$w=0,$h=0,$quality=75){
   // gotta get the data out of the img..
 
   // so I write to a temp file, and then read it back.. soo ugly, my apologies.
-  $tmpDir='/tmp';
-  $tmpName=tempnam($tmpDir,'img');
+  $temp_dir='/tmp';
+  $tmpName=tempnam($temp_dir,'img');
   imagejpeg($img,$tmpName,$quality);
   $fp=fopen($tmpName,'rb');
 
