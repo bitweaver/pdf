@@ -3,7 +3,7 @@
 * Pdf system class for outputing pdf file images
 *
 * @author   
-* @version  $Revision: 1.7 $
+* @version  $Revision: 1.8 $
 * @package  pdf
 */
 
@@ -84,7 +84,7 @@ if ($info["flag"] == 'L') {
 	$gBitSmarty->assign('lock', false);
 }
 
-$pdata = $gBitSystem->parseData($info["data"]);
+$pdata = $gBitSystem->parseData($info);
 
 //$gBitSmarty->assign_by_ref('parsed',$pdata);
 //$gBitSmarty->assign_by_ref('last_modified',date("l d of F, Y  [H:i:s]",$info["last_modified"]));

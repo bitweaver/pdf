@@ -3,7 +3,7 @@
 * Pdf system class for outputing pdf file images
 *
 * @author   
-* @version  $Revision: 1.3 $
+* @version  $Revision: 1.4 $
 * @package  pdf
 */
 
@@ -91,7 +91,7 @@ if ($pdflib->mSettings['autobreak'] == 'on') {
 		//$info = $wikilib->get_page_info($page);
 
 		$data .= "\n<C:page:$page>\n<br/>\n";
-		$data .= $gBitSystem->parseData($info["data"]);
+		$data .= $gBitSystem->parseData($info);
 */
 		}	
 	}
