@@ -3,7 +3,7 @@
 * Pdf system class for outputing pdf file images
 *
 * @author   
-* @version  $Revision: 1.4 $
+* @version  $Revision: 1.5 $
 * @package  pdf
 */
 
@@ -82,7 +82,7 @@ class BitPdf extends Cezpdf
 	function getPDFable() {
 		global $gBitSystem;
 		$ret = NULL;
-		$query = "SELECT `name`,`package`,`value` FROM `" . BIT_DB_PREFIX . "kernel_prefs` WHERE `name` LIKE ?";
+		$query = "SELECT `name`,`package`,`pref_value` FROM `" . BIT_DB_PREFIX . "kernel_prefs` WHERE `name` LIKE ?";
 		$result = $gBitSystem->mDb->query($query,array('feature_%_generate_pdf'));
 		while( $res = $result->fetchRow() ) {
 			$ret[] = $res;
