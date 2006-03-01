@@ -3,7 +3,7 @@
 * Pdf system class for outputing pdf file images
 *
 * @author   
-* @version  $Revision: 1.5 $
+* @version  $Revision: 1.6 $
 * @package  pdf
 */
 
@@ -41,7 +41,7 @@ class BitPdf extends Cezpdf
 		global $gBitSystem;
 		$this->mSettings = $this->getDefaultSettings();
 		foreach( array_keys( $this->mSettings ) as $key ) {
-			$keyPref = $gBitSystem->getPreference( $key, NULL );
+			$keyPref = $gBitSystem->getConfig( $key, NULL );
 			if( !empty( $keyPref ) ) {
 				$this->mSettings[$key] = $keyPref;
 			}
@@ -96,7 +96,7 @@ class BitPdf extends Cezpdf
 		$gBitSystem->expungePackagePreferences( PDF_PKG_NAME );
 		if( $this->verifySettings( $pParamHash ) ) {
 			foreach( array_keys( $pParamHash['setting_store'] ) as $key ) {
-				$gBitSystem->storePreference( $key, $pParamHash['setting_store'][$key],  PDF_PKG_NAME );
+				$gBitSystem->storeConfig( $key, $pParamHash['setting_store'][$key],  PDF_PKG_NAME );
 				$this->mSettings[$key] = $pParamHash['setting_store'][$key];
 			}
 		}
