@@ -5,7 +5,7 @@
 	</div>
 
 	<div class="body">
-		{form ifile="export_pdf.php" ipackage="pdf" method="post" legend="Create PDF for `$pageInfo.title`"}
+		{form ifile="export_pdf.php" ipackage="pdf" method="post" legend="Create PDF"}
 			{if $structureInfo.root_structure_id}
 				<input type="hidden" name="structure_id" value="{$structureInfo.root_structure_id}" />
 			{else}
@@ -15,7 +15,7 @@
 			<div class="row">
 				{formlabel label="Requested Item"}
 				{forminput}
-					{$pageInfo.title}
+					{$pageInfo.title|escape}
 				{/forminput}
 			</div>
 
