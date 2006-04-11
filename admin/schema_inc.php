@@ -9,6 +9,6 @@ $gBitInstaller->registerPackageInfo( PDF_PKG_NAME, array(
 
 // ### Default UserPermissions
 $gBitInstaller->registerUserPermissions( PDF_PKG_NAME, array(
-	array('bit_p_pdf_generation', 'Can create PDF files from content', 'registered', PDF_PKG_NAME),
+	array('p_pdf_generation', 'Can create PDF files from content', 'registered', PDF_PKG_NAME),
 ) );
 ?>

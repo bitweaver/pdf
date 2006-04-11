@@ -3,7 +3,7 @@
 * Pdf system class for outputing pdf file images
 *
 * @author   
-* @version  $Revision: 1.8 $
+* @version  $Revision: 1.9 $
 * @package  pdf
 */
 
@@ -62,7 +62,7 @@ if (!$wikilib->pageExists($page)) {
 }
 
 // Now check permissions to access this page
-if (!$gBitUser->hasPermission( 'bit_p_view' )) {
+if (!$gBitUser->hasPermission( 'p_wiki_view_page' )) {
 	$gBitSmarty->assign('msg', tra("Permission denied you cannot view this page"));
 
 	$gBitSystem->display( 'error.tpl' );

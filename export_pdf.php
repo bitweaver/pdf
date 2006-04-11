@@ -3,7 +3,7 @@
 * Pdf system class for outputing pdf file images
 *
 * @author   
-* @version  $Revision: 1.4 $
+* @version  $Revision: 1.5 $
 * @package  pdf
 */
 
@@ -26,7 +26,7 @@ require_once( WIKI_PKG_PATH.'export_lib.php' );
 require_once( PDF_PKG_PATH.'BitPdf.php' );
 
 $gBitSystem->verifyPackage( 'pdf' );
-$gBitSystem->verifyPermission( 'bit_p_view' );
+$gBitSystem->verifyPermission( 'p_wiki_view_page' );
 
 global $gLibertySystem;
 
