@@ -3,7 +3,7 @@
 * Pdf system class for outputing pdf file images
 *
 * @author   
-* @version  $Revision: 1.6 $
+* @version  $Revision: 1.7 $
 * @package  pdf
 */
 
@@ -407,9 +407,9 @@ default:
 		$http_path=preg_replace("#".PDF_PKG_URL."export_pdf.php#","",$_SERVER["SCRIPT_NAME"]);
 		
 		if ($https_mode) {
-			$http_prefix="https://" ; 
+			$site_http_prefix="https://" ; 
 		} else {
-			$http_prefix="http://";
+			$site_http_prefix="http://";
 			if ($port == ":80") {
 				$port="";
 			}
@@ -424,13 +424,13 @@ default:
 			  //$fpd=fopen("/tmp/tikidebug",'a');fwrite($fpd,"<c:ilink:$linkpage>$text</c:ilink>\n");fclose($fpd);
 			  return("<c:ilink:$linkpage>$text</c:ilink>");
 			} else {
-	//$fpd=fopen("/tmp/tikidebug",'a');fwrite($fpd,"<c:alink:".$http_prefix.$_SERVER["SERVER_NAME"].$port.$http_path.$link.">$text</c:alink>\n");fclose($fpd);
-			  return("<c:alink:".$http_prefix.$_SERVER["SERVER_NAME"].$port.$http_path.$link.">$text</c:alink>");
+	//$fpd=fopen("/tmp/tikidebug",'a');fwrite($fpd,"<c:alink:".$site_http_prefix.$_SERVER["SERVER_NAME"].$port.$http_path.$link.">$text</c:alink>\n");fclose($fpd);
+			  return("<c:alink:".$site_http_prefix.$_SERVER["SERVER_NAME"].$port.$http_path.$link.">$text</c:alink>");
 			}
 		}
 		
 		if (strpos($link,"http") === FALSE)	{
-			$link=$http_prefix.$_SERVER["SERVER_NAME"].$port.$http_path.$link;
+			$link=$site_http_prefix.$_SERVER["SERVER_NAME"].$port.$http_path.$link;
 		}
 		//$fpd=fopen("/tmp/tikidebug",'a');fwrite($fpd,"<c:alink:$link>$text</c:alink>\n");fclose($fpd);
 		return ("<c:alink:$link>$text</c:alink>");
