@@ -1,5 +1,5 @@
 <?php
-global $gBitSystem;
+global $gBitSystem, $gLibertySystem;
 
 $registerHash = array(
 	'package_name' => 'pdf',
