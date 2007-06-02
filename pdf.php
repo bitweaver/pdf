@@ -3,7 +3,7 @@
 * Pdf system class for outputing pdf file images
 *
 * @author   
-* @version  $Revision: 1.10 $
+* @version  $Revision: 1.11 $
 * @package  pdf
 */
 
@@ -19,9 +19,11 @@ require_once( '../bit_setup_inc.php' );
 include_once( STRUCTURES_PKG_PATH.'struct_lib.php');
 include_once( WIKI_PKG_PATH.'BitPage.php');
 
+$gContent = new BitPage();
+
 // Create the HomePage if it doesn't exist
-if (!$wikilib->pageExists($wiki_home_page)) {
-	$wikilib->create_page($wiki_home_page, 0, '', $gBitSystem->getUTCTime(), 'bitweaver initialization');
+if (!$gContent->pageExists($wiki_home_page)) {
+	$gContent->create_page($wiki_home_page, 0, '', $gBitSystem->getUTCTime(), 'bitweaver initialization');
 }
 
 if (!isset($_SESSION["thedate"])) {
@@ -43,39 +45,21 @@ if (!isset($_REQUEST["page"])) {
 
 require_once ( WIKI_PKG_PATH.'page_setup_inc.php' );
 
-// Check if we have to perform an action for this page
-// for example lock/unlock
-if (isset($_REQUEST["action"])) {
-	if ($_REQUEST["action"] == 'lock') {
-		$wikilib->lock_page($page);
-	} elseif ($_REQUEST["action"] == 'unlock') {
-		$wikilib->unlock_page($page);
-	}
-}
-
 // If the page doesn't exist then display an error
-if (!$wikilib->pageExists($page)) {
-	$gBitSmarty->assign('msg', tra("Page cannot be found"));
-
-	$gBitSystem->display( 'error.tpl' );
-	die;
+if( !$gContent->pageExists( $page )) {
+	$gBitSystem->fatalError( tra( "Page cannot be found" ));
 }
 
 // Now check permissions to access this page
-if (!$gBitUser->hasPermission( 'p_wiki_view_page' )) {
-	$gBitSmarty->assign('msg', tra("Permission denied you cannot view this page"));
-
-	$gBitSystem->display( 'error.tpl' );
-	die;
-}
+$gBitSystem->verifyPermission( 'p_wiki_view_page' );
 
 // Now increment page hits since we are visiting this page
 if ($gBitSystem->isFeatureActive( 'users_count_admin_pageviews' ) || !$gBitUser->isAdmin()) {
-	$wikilib->add_hit($page);
+	$gContent->addHit($page);
 }
 
 // Get page data
-$info = $wikilib->get_page_info($page);
+$info = $gContent->get_page_info($page);
 
 // Verify lock status
 if ($info["flag"] == 'L') {
