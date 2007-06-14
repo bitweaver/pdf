@@ -3,7 +3,7 @@
 * Pdf system class for outputing pdf file images
 *
 * @author   
-* @version  $Revision: 1.7 $
+* @version  $Revision: 1.8 $
 * @package  pdf
 */
 
@@ -118,6 +118,9 @@ class BitPdf extends Cezpdf
 
 	function insert_html(&$data)
 	{
+	  // Strip out HTML comments which don't get parsed right
+		$data = preg_replace('#<!.*?[^>]>#','',$data);
+
 	  // new code starts here
 	  // read grammar
 	//  $grammarfile='lib/htmlparser/htmlgrammar.cmp';
@@ -281,11 +284,14 @@ case "span":
 	break;
 case "a":
 	$hrefsrc=$c[$i]["pars"]["href"]["value"];
-	$hreftext=$c[$i]["content"]["0"]["data"]; //always ["0"] ?
-	if( is_array( $hreftext ) ) {
-		$this->WalkParsedArray( $c[$i]["content"], $src, $parms );
-	} else {
-		$this->concatData( $this->whatlink($hrefsrc,$hreftext), $src, $parms );
+	// Only walk contents if we have some. Not sure what this is doing really. -nickpalmer
+	if (!empty($c[$i]["content"])) {
+		$hreftext=$c[$i]["content"]["0"]["data"]; //always ["0"] ?	
+		if( is_array( $hreftext )) {
+			$this->WalkParsedArray( $c[$i]["content"], $src, $parms );
+		} else {
+			$this->concatData( $this->whatlink($hrefsrc,$hreftext), $src, $parms );
+		}
 	}
 	$parms["descend"]=false;
 	break;

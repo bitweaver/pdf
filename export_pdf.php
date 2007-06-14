@@ -3,7 +3,7 @@
 * Pdf system class for outputing pdf file images
 *
 * @author   
-* @version  $Revision: 1.6 $
+* @version  $Revision: 1.7 $
 * @package  pdf
 */
 
@@ -65,7 +65,7 @@ if ($pdflib->mSettings['autobreak'] == 'on') {
 				$downloadTitle = $conPage->mInfo['title'];
 			}
 			$pdata = "\n<C:page:".$conPage->mInfo['title'].">\n<br/>\n";
-			$pdata .= $conPage->parseData();
+			$pdata .= $conPage->getPreview();
 			$pdata = utf8_decode( $pdata );
 			$pdflib->add_linkdestination( $conPage->mInfo['title'] );
 			$pdflib->insert_html( $pdata );
