@@ -3,7 +3,7 @@
 * Pdf system class for outputing pdf file images
 *
 * @author   
-* @version  $Revision: 1.5 $
+* @version  $Revision: 1.6 $
 * @package  pdf
 */
 
@@ -45,7 +45,7 @@ if( is_object( $gStructure ) ) {
 	$rootConId = array_shift( $convertpages );
 	if( $conPage = $gLibertySystem->getLibertyObject( $rootConId ) ) {
 		$pdata = "\n<C:page:".$conPage->mInfo['title'].">\n<br/>\n";
-		$pdata .= $conPage->parseData();
+		$pdata .= $conPage->getPreview();
 		$pdata = utf8_decode( $pdata );
 		$pdflib->add_linkdestination( $conPage->mInfo['title'] );
 		$pdflib->insert_html( $pdata );
@@ -80,7 +80,7 @@ if ($pdflib->mSettings['autobreak'] == 'on') {
 				$downloadTitle = $conPage->mInfo['title'];
 			}
 			$pdata .= "\n<C:page:".$conPage->mInfo['title'].">\n<br/>\n";
-			$pdata .= $conPage->parseData();
+			$pdata .= $conPage->getPreview();
 			array_push( $linkDest, $conPage->mInfo['title'] );
 /* 
 		$wikiPage = new BitPage();
