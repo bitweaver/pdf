@@ -1,5 +1,5 @@
 <?php
-global $gBitSystem, $gLibertySystem;
+global $gBitSystem, $gLibertySystem, $gBitThemes;
 
 $registerHash = array(
 	'package_name' => 'pdf',
@@ -13,8 +13,7 @@ if( $gBitSystem->isPackageActive( 'pdf' ) ) {
 		'content_icon_tpl' => 'bitpackage:pdf/pdf_service_icons.tpl',
 	) );
 	if( !empty( $_REQUEST['style'] ) ) {
-		global $gPreviewStyle;
-		$gPreviewStyle = $_REQUEST['style'];
+		$gBitThemes->setStyle( $_REQUEST['style'] );
 	}
 	if( !empty( $_REQUEST['no_force'] ) ) {
 		global $gNoForceStyle;
