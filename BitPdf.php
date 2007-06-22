@@ -3,7 +3,7 @@
 * Pdf system class for outputing pdf file images
 *
 * @author   
-* @version  $Revision: 1.8 $
+* @version  $Revision: 1.9 $
 * @package  pdf
 */
 
@@ -16,7 +16,6 @@ require_once( UTIL_PKG_PATH.'htmlparser/html_parser_inc.php' );
 
 /**
 * @package  pdf
-* @subpackage  BitPdf
 */
 class BitPdf extends Cezpdf
 {
