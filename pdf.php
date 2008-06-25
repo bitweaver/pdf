@@ -3,7 +3,7 @@
 * Pdf system class for outputing pdf file images
 *
 * @author   
-* @version  $Revision: 1.11 $
+* @version  $Revision: 1.12 $
 * @package  pdf
 */
 
@@ -90,7 +90,7 @@ $pdf->ezStream();
 
 // Display the Index Template
 /*
-$gBitSystem->display('tiki-show_page.tpl');
+$gBitSystem->display('tiki-show_page.tpl', NULL, array( 'display_mode' => 'display' ));
 $gBitSmarty->assign('show_page_bar','y');
 */
 

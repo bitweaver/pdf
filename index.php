@@ -1,6 +1,6 @@
 <?php
 
-// $Header: /cvsroot/bitweaver/_bit_pdf/index.php,v 1.2 2005/06/28 07:45:54 spiderr Exp $
+// $Header: /cvsroot/bitweaver/_bit_pdf/index.php,v 1.3 2008/06/25 22:21:15 spiderr Exp $
 
 // Copyright (c) 2002-2003, Luis Argerich, Garland Foster, Eduardo Polidor, et. al.
 // All Rights Reserved. See copyright.txt for details and a complete list of authors.
@@ -18,6 +18,6 @@ $gBitSystem->verifyPackage( 'pdf' );
 
 $gBitSystem->setBrowserTitle( 'Create PDF for '.$gContent->mInfo['title'] );
 
-$gBitSystem->display( 'config_pdf.tpl');
+$gBitSystem->display( 'config_pdf.tpl', NULL, array( 'display_mode' => 'display' ));
 
 ?>
