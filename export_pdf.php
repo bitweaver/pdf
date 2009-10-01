@@ -3,12 +3,12 @@
 * Pdf system class for outputing pdf file images
 *
 * @author   
-* @version  $Revision: 1.8 $
+* @version  $Revision: 1.9 $
 * @package  pdf
 */
 
 // Copyright (c) 2002-2003, Luis Argerich, Garland Foster, Eduardo Polidor, et. al.
-// All Rights Reserved. See copyright.txt for details and a complete list of authors.
+// All Rights Reserved. See below for details and a complete list of authors.
 // Licensed under the GNU LESSER GENERAL PUBLIC LICENSE. See http://www.gnu.org/copyleft/lesser.html for details.
 
 /**
