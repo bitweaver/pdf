@@ -3,7 +3,7 @@
 * Pdf system class for outputing pdf file images
 *
 * @author   
-* @version  $Revision: 1.9 $
+* @version  $Revision: 1.10 $
 * @package  pdf
 */
 
@@ -15,7 +15,7 @@
 * required setup
 */
 //include_once("tiki-setup_base.php");
-include_once( '../bit_setup_inc.php' );
+include_once( '../kernel/setup_inc.php' );
 
 require_once( LIBERTY_PKG_PATH.'LibertySystem.php');
 require_once( LIBERTY_PKG_PATH.'LibertyStructure.php');

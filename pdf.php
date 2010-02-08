@@ -3,7 +3,7 @@
 * Pdf system class for outputing pdf file images
 *
 * @author   
-* @version  $Revision: 1.14 $
+* @version  $Revision: 1.15 $
 * @package  pdf
 */
 
@@ -14,7 +14,7 @@
 /**
 * required setup
 */
-require_once( '../bit_setup_inc.php' );
+require_once( '../kernel/setup_inc.php' );
 
 include_once( STRUCTURES_PKG_PATH.'struct_lib.php');
 include_once( WIKI_PKG_PATH.'BitPage.php');
