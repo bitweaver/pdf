@@ -9,4 +9,8 @@ $gBitInstaller->registerPackageInfo( PDF_PKG_NAME, array(
 $gBitInstaller->registerUserPermissions( PDF_PKG_NAME, array(
 	array('p_pdf_generation', 'Can create PDF files from content', 'registered', PDF_PKG_NAME),
 ) );
-?>
+
+// Requirements
+$gBitInstaller->registerRequirements( PDF_PKG_NAME, array(
+    'liberty' => array( 'min' => '2.1.4' ),
+));
