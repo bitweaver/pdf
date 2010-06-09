@@ -3,7 +3,7 @@
 * Pdf system class for outputing pdf file images
 *
 * @author   
-* @version  $Revision: 1.9 $
+* @version  $Revision$
 * @package  pdf
 */
 
