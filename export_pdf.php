@@ -43,7 +43,7 @@ if( is_object( $gStructure ) ) {
 	$gStructure->getContentArray( $gStructure->mStructureId, $convertpages );
 	// always put the first root page in it's own PDF page - it usually has a {toc}
 	$rootConId = array_shift( $convertpages );
-	if( $conPage = $gLibertySystem->getLibertyObject( $rootConId ) ) {
+	if( $conPage = LibertyBase::getLibertyObject( $rootConId ) ) {
 		$pdata = "\n<C:page:".$conPage->mInfo['title'].">\n<br/>\n";
 		$pdata .= $conPage->getPreview();
 		$pdata = utf8_decode( $pdata );
@@ -60,7 +60,7 @@ $pdata = '';
 
 if ($pdflib->mSettings['autobreak'] == 'on') {
 	foreach ($convertpages as $conId) {
-		if( $conPage = $gLibertySystem->getLibertyObject( $conId ) ) {
+		if( $conPage = LibertyBase::getLibertyObject( $conId ) ) {
 			if( empty( $downloadTitle ) ) { 
 				$downloadTitle = $conPage->mInfo['title'];
 			}
@@ -75,7 +75,7 @@ if ($pdflib->mSettings['autobreak'] == 'on') {
 } else {
 	$linkDest = array();
 	foreach ($convertpages as $conId) {
-		if( $conPage = $gLibertySystem->getLibertyObject( $conId ) ) {
+		if( $conPage = LibertyBase::getLibertyObject( $conId ) ) {
 			if( empty( $downloadTitle ) ) { 
 				$downloadTitle = $conPage->mInfo['title'];
 			}
