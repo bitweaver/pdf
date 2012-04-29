@@ -2,7 +2,7 @@
 /**
 * Pdf system class for outputing pdf file images
 *
-* @author   
+* @author
 * @version  $Revision$
 * @package  pdf
 */
@@ -61,7 +61,7 @@ $pdata = '';
 if ($pdflib->mSettings['autobreak'] == 'on') {
 	foreach ($convertpages as $conId) {
 		if( $conPage = LibertyBase::getLibertyObject( $conId ) ) {
-			if( empty( $downloadTitle ) ) { 
+			if( empty( $downloadTitle ) ) {
 				$downloadTitle = $conPage->mInfo['title'];
 			}
 			$pdata = "\n<C:page:".$conPage->mInfo['title'].">\n<br/>\n";
@@ -76,24 +76,24 @@ if ($pdflib->mSettings['autobreak'] == 'on') {
 	$linkDest = array();
 	foreach ($convertpages as $conId) {
 		if( $conPage = LibertyBase::getLibertyObject( $conId ) ) {
-			if( empty( $downloadTitle ) ) { 
+			if( empty( $downloadTitle ) ) {
 				$downloadTitle = $conPage->mInfo['title'];
 			}
 			$pdata .= "\n<C:page:".$conPage->mInfo['title'].">\n<br/>\n";
 			$pdata .= $conPage->getPreview();
 			array_push( $linkDest, $conPage->mInfo['title'] );
-/* 
+/*
 		$wikiPage = new BitPage();
 		$wikiPage->findByPageName($page);
 		$wikiPage->load();
-		
+
 		$info = $wikiPage->mInfo;
 		//$info = $wikilib->get_page_info($page);
 
 		$data .= "\n<C:page:$page>\n<br/>\n";
 		$data .= $gBitSystem->parseData($info);
 */
-		}	
+		}
 	}
 
 	//todo: add linkdestinations for titlebars
@@ -119,7 +119,7 @@ if ($pdfdebug) {
 	//$output = $pdflib->ezOutput($hopts);
 	//vd($output);
 	//vd($pdflib);
-	
+
 }
 
 ?>
