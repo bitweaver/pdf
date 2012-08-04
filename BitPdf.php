@@ -92,7 +92,8 @@ class BitPdf extends Cezpdf
 
 	function storeSettings( &$pParamHash ) {
 		global $gBitSystem;
-		$gBitSystem->expungePackagePreferences( PDF_PKG_NAME );
+//		$gBitSystem->expungePackagePreferences( PDF_PKG_NAME );
+// need to rework this to the current preferences process
 		if( $this->verifySettings( $pParamHash ) ) {
 			foreach( array_keys( $pParamHash['setting_store'] ) as $key ) {
 				$gBitSystem->storeConfig( $key, $pParamHash['setting_store'][$key],  PDF_PKG_NAME );
