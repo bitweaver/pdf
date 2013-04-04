@@ -66,7 +66,7 @@
 			{/if}
 
 				<div class="control-group submit">
-					<input type="submit" name="save" value="{tr}Apply Settings{/tr}" />
+					<input type="submit" class="btn" name="save" value="{tr}Apply Settings{/tr}" />
 				</div>
 			{/form}
 		{/jstab}
