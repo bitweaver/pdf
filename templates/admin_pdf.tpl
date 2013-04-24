@@ -76,7 +76,7 @@
 
 			{cycle values="even,odd" print=false}
 
-			<table class="data">
+			<table class="table data">
 				<tbody>
 					<tr>
 						<th colspan="2">Standard Book Sizes</th>
@@ -98,7 +98,7 @@
 
 			<br/>
 
-			<table class="data">
+			<table class="table data">
 				<tbody>
 					<tr>
 						<th colspan="2">North American Paper Sizes</th>
@@ -128,7 +128,7 @@
 
 			<br/>
 
-			<table class="data">
+			<table class="table data">
 				<colgroup span="2"></colgroup>
 				<colgroup span="2"></colgroup>
 				<colgroup span="2"></colgroup>
