@@ -7,7 +7,7 @@
 				<input type="hidden" name="page" value="{$page}" />
 
 			{if $gBitSystem->isPackageActive('pdf')}
-				<div class="control-group">
+				<div class="form-group">
 					{formlabel label="Font" for="font"}
 					{forminput}
 						<input type="text" name="font" id="font" size="50" value="{$pdfSettings.font|escape}" />
@@ -15,49 +15,49 @@
 				</div>
 
 
-				<div class="control-group">
+				<div class="form-group">
 					{formlabel label="Text Height" for="textheight"}
 					{forminput}
 						<input type="text" name="textheight" id="textheight" size="5" value="{$pdfSettings.textheight|escape}" />
 					{/forminput}
 				</div>
 
-				<div class="control-group">
+				<div class="form-group">
 					{formlabel label="Height of top Heading &lt;H1&gt;" for="h1height"}
 					{forminput}
 						<input type="text" name="h1height" id="h1height" size="5" value="{$pdfSettings.h1height|escape}" />
 					{/forminput}
 				</div>
 
-				<div class="control-group">
+				<div class="form-group">
 					{formlabel label="Height of mid Heading &lt;H2&gt;" for="h2height"}
 					{forminput}
 						<input type="text" name="h2height" id="h2height" size="5" value="{$pdfSettings.h2height|escape}" />
 					{/forminput}
 				</div>
 
-				<div class="control-group">
+				<div class="form-group">
 					{formlabel label="Height of inner Heading &lt;H3&gt;" for="h3height"}
 					{forminput}
 						<input type="text" name="h3height" id="h3height" size="5" value="{$pdfSettings.h3height|escape}" />
 					{/forminput}
 				</div>
 
-				<div class="control-group">
+				<div class="form-group">
 					{formlabel label="tbheight" for="tbheight"}
 					{forminput}
 						<input type="text" name="tbheight" id="tbheight" size="5" value="{$pdfSettings.tbheight|escape}" />
 					{/forminput}
 				</div>
 
-				<div class="control-group">
+				<div class="form-group">
 					{formlabel label="Image Scale" for="imagescale"}
 					{forminput}
 						<input type="text" name="imagescale" id="imagescale" size="5" value="{$pdfSettings.imagescale|escape}" />
 					{/forminput}
 				</div>
 
-				<div class="control-group">
+				<div class="form-group">
 					{formlabel label="Automatic Page Breaks" for="autobreak"}
 					{forminput}
 						<input type="checkbox" {if $pdfSettings.autobreak eq 'on'}checked="checked"{/if} name="autobreak" id="autobreak" />
@@ -65,7 +65,7 @@
 				</div>
 			{/if}
 
-				<div class="control-group submit">
+				<div class="form-group submit">
 					<input type="submit" class="btn btn-default" name="save" value="{tr}Apply Settings{/tr}" />
 				</div>
 			{/form}

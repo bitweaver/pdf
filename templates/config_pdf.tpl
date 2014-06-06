@@ -12,21 +12,21 @@
 				<input type="hidden" name="content_id" value="{$pageInfo.content_id}" />
 			{/if}
 
-			<div class="control-group">
+			<div class="form-group">
 				{formlabel label="Requested Item"}
 				{forminput}
 					{$pageInfo.title|escape}
 				{/forminput}
 			</div>
 
-			<div class="control-group">
+			<div class="form-group">
 				{formlabel label="Content Type"}
 				{forminput}
 					{$pageInfo.content_type.content_name}
 				{/forminput}
 			</div>
 
-			<div class="control-group submit">
+			<div class="form-group submit">
 				<input type="submit" class="btn btn-default" name="create" value="{tr}Create PDF{/tr}" />
 			</div>
 		{/form}
