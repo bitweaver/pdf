@@ -40,7 +40,7 @@ if (!isset($_REQUEST["page"])) {
 } else {
 	$page = $_REQUEST["page"];
 
-	$gBitSmarty->assign_by_ref('page', $_REQUEST["page"]);
+	$gBitSmarty->assignByRef('page', $_REQUEST["page"]);
 }
 
 require_once ( WIKI_PKG_PATH.'page_setup_inc.php' );
@@ -70,14 +70,14 @@ if ($info["flag"] == 'L') {
 
 $pdata = $gBitSystem->parseData($info);
 
-//$gBitSmarty->assign_by_ref('parsed',$pdata);
-//$gBitSmarty->assign_by_ref('last_modified',date("l d of F, Y  [H:i:s]",$info["last_modified"]));
-//$gBitSmarty->assign_by_ref('last_modified',$info["last_modified"]);
+//$gBitSmarty->assignByRef('parsed',$pdata);
+//$gBitSmarty->assignByRef('last_modified',date("l d of F, Y  [H:i:s]",$info["last_modified"]));
+//$gBitSmarty->assignByRef('last_modified',$info["last_modified"]);
 if (empty($info["user"])) {
 	$info["user"] = 'anonymous';
 }
 
-//$gBitSmarty->assign_by_ref('lastUser',$info["user"]);
+//$gBitSmarty->assignByRef('lastUser',$info["user"]);
 
 // Parse the Data into PDF format (:TODO:)
 // 
